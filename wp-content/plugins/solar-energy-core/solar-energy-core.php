@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Solar Energy Core
  * Plugin URI: https://github.com/Delight2k44/Solar-Energy-
- * Description: Core plugin for custom post types (Maintenance Plans, Diagnostic Alerts, Technician Dispatches) for Solar Energy Solutions.
- * Version: 1.0.0
+ * Description: Core plugin for custom post types (Maintenance Plans, Diagnostic Alerts, Technician Dispatches) & automated page setup for Solar Energy Solutions.
+ * Version: 1.1.0
  * Author: Delight2k44
  * Author URI: https://github.com/Delight2k44
  * Text Domain: solar-energy-core
@@ -13,6 +13,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+define( 'SOLAR_CORE_FILE', __FILE__ );
+define( 'SOLAR_CORE_DIR', plugin_dir_path( __FILE__ ) );
 
 /**
  * Register Maintenance Plans Custom Post Type.
@@ -42,3 +45,8 @@ function solar_register_maintenance_cpt() {
 	register_post_type( 'solar_maintenance', $args );
 }
 add_action( 'init', 'solar_register_maintenance_cpt', 0 );
+
+/**
+ * Load Demo Setup Script.
+ */
+require_once SOLAR_CORE_DIR . 'inc/demo-data.php';

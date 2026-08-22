@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'SOLAR_CHILD_VERSION', '1.0.0' );
+define( 'SOLAR_CHILD_VERSION', '1.1.0' );
 define( 'SOLAR_CHILD_DIR', get_stylesheet_directory() );
 define( 'SOLAR_CHILD_URI', get_stylesheet_directory_uri() );
 
@@ -23,7 +23,7 @@ function solar_energy_child_enqueue_assets() {
 	// Enqueue Child main stylesheet
 	wp_enqueue_style( 'solar-child-style', get_stylesheet_uri(), array( 'astra-parent-style' ), SOLAR_CHILD_VERSION );
 
-	// Enqueue Custom Calculators Styling
+	// Enqueue Custom Calculators & Layout Styling
 	wp_enqueue_style( 'solar-calculators-css', SOLAR_CHILD_URI . '/assets/css/solar-calculators.css', array(), SOLAR_CHILD_VERSION );
 
 	// Enqueue Configurator Script
@@ -57,8 +57,11 @@ function solar_energy_child_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'solar_energy_child_enqueue_assets' );
 
 /**
- * Include modular logic files.
+ * Include modular PHP logic files.
  */
 require_once SOLAR_CHILD_DIR . '/inc/configurator.php';
 require_once SOLAR_CHILD_DIR . '/inc/financing.php';
 require_once SOLAR_CHILD_DIR . '/inc/woocommerce.php';
+require_once SOLAR_CHILD_DIR . '/inc/woocommerce-extended.php';
+require_once SOLAR_CHILD_DIR . '/inc/dispatch-tracker.php';
+require_once SOLAR_CHILD_DIR . '/inc/security-seo.php';
