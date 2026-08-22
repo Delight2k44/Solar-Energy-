@@ -1,0 +1,23 @@
+# WordPress standard gitignore
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Node modules / vendor dependencies if used
+node_modules/
+vendor/
+
+# Local WordPress Uploads & Cache (don't commit heavy user uploads)
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/backup-db/
+
+# Hostinger / Server Environment files
+.env
+.htaccess
+wp-config.php
