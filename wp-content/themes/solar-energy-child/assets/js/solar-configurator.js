@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		// 3. Panels needed (400W panels = 0.400kW per panel)
 		const panelCount = Math.ceil(systemKw / 0.400);
 
-		// 4. Base Cost ($2,400 per kW turn-key) + optional battery ($7,500)
-		let totalCost = systemKw * 2400;
+		// 4. Base Cost (R20,000 per kW turn-key) + optional battery (R60,000)
+		let totalCost = systemKw * 20000;
 		if (includeBattery) {
-			totalCost += 7500;
+			totalCost += 60000;
 		}
 
 		// 5. Estimated Monthly Savings (85% bill offset)
@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		// Update UI with formatted values
 		resSystemSize.textContent = systemKw.toFixed(1) + ' kW';
 		resPanelCount.textContent = panelCount + ' Panels';
-		resMonthlySavings.textContent = '$' + Math.round(monthlySavings).toLocaleString() + ' / mo';
-		resTotalCost.textContent = '$' + Math.round(totalCost).toLocaleString();
+		resMonthlySavings.textContent = 'R' + Math.round(monthlySavings).toLocaleString() + ' / mo';
+		resTotalCost.textContent = 'R' + Math.round(totalCost).toLocaleString();
 	}
 
 	// Attach Event Listeners

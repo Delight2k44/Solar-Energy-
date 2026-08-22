@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 
 		// Update UI
-		resRebateSavings.textContent = '-$' + Math.round(rebateSavings).toLocaleString();
-		resNetAmount.textContent = '$' + Math.round(netFinanced).toLocaleString();
-		resMonthlyPay.textContent = '$' + Math.round(monthlyPayment).toLocaleString() + ' / mo';
+		resRebateSavings.textContent = '-R' + Math.round(rebateSavings).toLocaleString();
+		resNetAmount.textContent = 'R' + Math.round(netFinanced).toLocaleString();
+		resMonthlyPay.textContent = 'R' + Math.round(monthlyPayment).toLocaleString() + ' / mo';
 	}
 
 	// Attach Event Listeners

@@ -25,21 +25,21 @@ function solar_render_financing_shortcode( $atts ) {
 				<!-- System Cost -->
 				<div class="solar-input-group">
 					<label for="fin-system-cost" class="solar-label">
-						Total Solar System Cost ($)
+						Total Solar System Cost (R)
 					</label>
 					<div class="solar-input-prefix-wrapper">
-						<span class="solar-prefix">$</span>
-						<input type="number" id="fin-system-cost" name="system_cost" class="solar-input" value="12000" min="1000" max="100000" step="500" required>
+						<span class="solar-prefix">R</span>
+						<input type="number" id="fin-system-cost" name="system_cost" class="solar-input" value="150000" min="10000" max="1000000" step="5000" required>
 					</div>
 				</div>
 
 				<!-- Federal / Local Rebates % -->
 				<div class="solar-input-group">
 					<label for="fin-rebate-pct" class="solar-label">
-						Solar Incentive / Tax Credit (%)
+						SARS / Municipal Solar Incentive (%)
 					</label>
-					<input type="number" id="fin-rebate-pct" name="rebate_pct" class="solar-input" value="30" min="0" max="80" step="1" required>
-					<span class="solar-help-text">Default federal clean energy tax credit is 30%.</span>
+					<input type="number" id="fin-rebate-pct" name="rebate_pct" class="solar-input" value="25" min="0" max="80" step="1" required>
+					<span class="solar-help-text">South African solar rebate incentive (approx 25%).</span>
 				</div>
 
 				<!-- Loan Term -->
@@ -60,7 +60,8 @@ function solar_render_financing_shortcode( $atts ) {
 					<label for="fin-interest-rate" class="solar-label">
 						Annual Interest Rate / APR (%)
 					</label>
-					<input type="number" id="fin-interest-rate" name="interest_rate" class="solar-input" value="6.5" min="0.0" max="25.0" step="0.1" required>
+					<input type="number" id="fin-interest-rate" name="interest_rate" class="solar-input" value="11.75" min="2.0" max="30.0" step="0.05" required>
+					<span class="solar-help-text">Default Prime Rate + margin.</span>
 				</div>
 			</div>
 
@@ -69,15 +70,15 @@ function solar_render_financing_shortcode( $atts ) {
 				<div class="solar-results-grid">
 					<div class="solar-result-item">
 						<span class="solar-result-label">Rebate Savings</span>
-						<span class="solar-result-value solar-text-green" id="fin-res-rebate-savings">-$3,600</span>
+						<span class="solar-result-value solar-text-green" id="fin-res-rebate-savings">-R37,500</span>
 					</div>
 					<div class="solar-result-item">
 						<span class="solar-result-label">Net Financed Amount</span>
-						<span class="solar-result-value" id="fin-res-net-amount">$8,400</span>
+						<span class="solar-result-value" id="fin-res-net-amount">R112,500</span>
 					</div>
 					<div class="solar-result-item highlight blue">
 						<span class="solar-result-label">Estimated Payment</span>
-						<span class="solar-result-value" id="fin-res-monthly-pay">$95 / mo</span>
+						<span class="solar-result-value" id="fin-res-monthly-pay">R1,598 / mo</span>
 					</div>
 				</div>
 

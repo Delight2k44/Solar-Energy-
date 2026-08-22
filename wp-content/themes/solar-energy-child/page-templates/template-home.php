@@ -15,106 +15,119 @@ get_header();
 
 <main id="primary" class="site-main solar-home-page">
 
-	<!-- Hero Section -->
-	<section class="solar-hero-section">
-		<div class="solar-hero-container">
+	<!-- Hero Section with Background Image -->
+	<section class="solar-hero-section" style="background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover; color: #ffffff; padding: 6rem 2rem; text-align: center;">
+		<div class="solar-hero-container" style="max-width: 1000px; margin: 0 auto;">
 			<div class="solar-hero-content">
-				<span class="solar-calc-badge">Clean Energy Technology</span>
-				<h1 class="solar-hero-title">Empowering Your Future with Clean, Renewable Solar Power</h1>
-				<p class="solar-hero-subtitle">Turn-key solar panel installation, commercial battery storage, and smart energy maintenance backed by a 25-year performance warranty.</p>
-				<div class="solar-hero-cta-group">
-					<a href="#solar-configurator-app" class="solar-btn solar-btn-primary">Build Your Solar System →</a>
-					<a href="/shop" class="solar-btn solar-btn-secondary">Explore Equipment Store</a>
+				<span class="solar-calc-badge" style="background: #f59e0b; color: #0f172a; margin-bottom: 1.5rem;">Loadshedding Protection Systems</span>
+				<h1 class="solar-hero-title" style="font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.5rem; text-wrap: balance;">Beat Loadshedding with Premium Hybrid Solar & Battery Solutions</h1>
+				<p class="solar-hero-subtitle" style="font-size: 1.25rem; color: #94a3b8; line-height: 1.6; margin-bottom: 2.5rem; text-wrap: pretty;">Get seamless Stage 6 backup protection. Custom residential solar panel installation, certified Freedom Won battery packs, and smart inverter setups. 25-Year Performance Warranty.</p>
+				<div class="solar-hero-cta-group" style="display: flex; gap: 1.25rem; justify-content: center; margin-bottom: 3rem;">
+					<a href="#solar-configurator-app" class="solar-btn solar-btn-primary" style="padding: 1rem 2rem; font-size: 1.05rem;">Size Your Solar System ZAR →</a>
+					<a href="/shop" class="solar-btn" style="background: #334155; color: #ffffff; padding: 1rem 2rem; font-size: 1.05rem; border-radius: 8px; text-decoration: none;">Explore Solar Shop</a>
 				</div>
-				<div class="solar-hero-trust-bar">
-					<span>✔️ 25-Year Warranty</span>
-					<span>✔️ Tier-1 Solar Panels</span>
-					<span>✔️ Certified Local Installers</span>
-				</div>
-			</div>
-			<div class="solar-hero-image-wrapper">
-				<div class="solar-hero-card-preview">
-					<div class="solar-card-header">
-						<span>⚡ Live System Performance</span>
-						<span class="solar-status-pill green">99.4% Efficiency</span>
-					</div>
-					<div class="solar-card-stat">
-						<span class="stat-num">8.4 kW</span>
-						<span class="stat-label">Daily Average Production</span>
-					</div>
-					<div class="solar-card-mini-grid">
-						<div><strong>$185/mo</strong><span>Est. Savings</span></div>
-						<div><strong>14.2 Tons</strong><span>CO2 Avoided</span></div>
-					</div>
+				<div class="solar-hero-trust-bar" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; color: #cbd5e1; font-size: 0.95rem; font-weight: 600;">
+					<span>🛡️ 25-Year Panel Warranty</span>
+					<span>⚡ Sunsynk & Victron Partners</span>
+					<span>🇿🇦 Certified Local SA Installers</span>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- Solar Services Grid -->
-	<section class="solar-services-section">
-		<div class="solar-section-container">
-			<div class="solar-section-header text-center">
-				<h2>Complete Solar Energy Solutions</h2>
-				<p>From initial site inspection to lifelong maintenance subscriptions, we cover every stage of your clean energy transition.</p>
+	<!-- Solar Services Grid with Images -->
+	<section class="solar-services-section" style="padding: 4rem 1rem; background: #ffffff;">
+		<div class="solar-section-container" style="max-width: 1100px; margin: 0 auto;">
+			<div class="solar-section-header text-center" style="text-align: center; margin-bottom: 3.5rem;">
+				<h2 style="font-size: 2.25rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem;">Premium Solar Solutions for South African Homes & Businesses</h2>
+				<p style="color: #64748b; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">From initial engineering site audits to automatic backup dispatch, we secure your energy independence.</p>
 			</div>
 
-			<div class="solar-services-grid">
-				<div class="solar-service-card">
-					<div class="solar-service-icon">☀️</div>
-					<h3>Turn-Key Residential Installation</h3>
-					<p>Custom rooftop & ground-mount solar arrays engineered for maximum energy offset and rapid ROI.</p>
-					<a href="/services/installation" class="solar-link">Learn More →</a>
+			<div class="solar-services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+				<!-- Card 1 -->
+				<div class="solar-service-card" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #f8fafc; transition: transform 0.2s ease;">
+					<img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&h=350&q=80" alt="Rooftop Solar Installation" style="width: 100%; height: 220px; object-fit: cover;">
+					<div style="padding: 1.75rem;">
+						<h3 style="font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 0.75rem;">Residential Solar Installation</h3>
+						<p style="color: #475569; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Engineered rooftop panel arrays designed for maximum daily yield and Eskom tariff offset. Full NERSA compliance registration included.</p>
+						<a href="/services/installation" class="solar-btn solar-btn-primary" style="font-size: 0.85rem; padding: 0.6rem 1.2rem;">Book Free Site Audit</a>
+					</div>
 				</div>
 
-				<div class="solar-service-card">
-					<div class="solar-service-icon">🔋</div>
-					<h3>Battery Storage & Microgrids</h3>
-					<p>Seamless backup power solutions using Lithium Iron Phosphate (LiFePO4) battery technology.</p>
-					<a href="/services/batteries" class="solar-link">Learn More →</a>
+				<!-- Card 2 -->
+				<div class="solar-service-card" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #f8fafc; transition: transform 0.2s ease;">
+					<img src="https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=600&h=350&q=80" alt="LiFePO4 Backup Batteries" style="width: 100%; height: 220px; object-fit: cover;">
+					<div style="padding: 1.75rem;">
+						<h3 style="font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 0.75rem;">Loadshedding Battery Backup</h3>
+						<p style="color: #475569; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Sunsynk, Deye, and Victron inverters paired with Freedom Won batteries. Under-20ms transfer time ensures your power never blinks.</p>
+						<a href="/services/batteries" class="solar-btn solar-btn-primary" style="font-size: 0.85rem; padding: 0.6rem 1.2rem;">Explore Hybrid Bundles</a>
+					</div>
 				</div>
 
-				<div class="solar-service-card">
-					<div class="solar-service-icon">🛠️</div>
-					<h3>Maintenance & Remote Diagnostics</h3>
-					<p>24/7 automated monitoring, panel washing, inverter maintenance, and technician dispatch.</p>
-					<a href="/services/maintenance" class="solar-link">Learn More →</a>
+				<!-- Card 3 -->
+				<div class="solar-service-card" style="border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background: #f8fafc; transition: transform 0.2s ease;">
+					<img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&h=350&q=80" alt="Solar Maintenance" style="width: 100%; height: 220px; object-fit: cover;">
+					<div style="padding: 1.75rem;">
+						<h3 style="font-size: 1.35rem; font-weight: 700; color: #0f172a; margin-bottom: 0.75rem;">Subscription Care & Cleaning</h3>
+						<p style="color: #475569; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1.5rem;">Annual panel washing, electrical testing, firmware updates, and remote diagnostic monitoring to prevent power drops.</p>
+						<a href="/services/maintenance" class="solar-btn solar-btn-primary" style="font-size: 0.85rem; padding: 0.6rem 1.2rem;">Select Maintenance Plan</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Embedded Solar Configurator Widget -->
-	<section class="solar-calculator-embed-section" id="configurator-section">
-		<div class="solar-section-container">
+	<section class="solar-calculator-embed-section" id="configurator-section" style="padding: 4rem 1rem; background: #f1f5f9;">
+		<div class="solar-section-container" style="max-width: 1100px; margin: 0 auto;">
 			<?php echo do_shortcode( '[solar_configurator]' ); ?>
 		</div>
 	</section>
 
-	<!-- Scalable Future Energy Sectors -->
-	<section class="solar-future-energy-section">
-		<div class="solar-section-container">
-			<div class="solar-section-header">
-				<span class="solar-calc-badge blue">Future-Proof Energy Network</span>
-				<h2>Engineered to Scale with Tomorrow's Clean Technologies</h2>
-				<p>Our modular grid integration platform is designed to incorporate additional renewable energy assets as our commercial portfolio expands.</p>
+	<!-- Brands Trust Showcase -->
+	<section class="solar-brands-showcase" style="padding: 3rem 1rem; background: #ffffff; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; text-align: center;">
+		<div style="max-width: 1100px; margin: 0 auto;">
+			<h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: #94a3b8; font-weight: 700; margin-bottom: 2rem;">Compatible Tier-1 Brands We Support & Install</h4>
+			<div style="display: flex; justify-content: center; gap: 4rem; align-items: center; flex-wrap: wrap; opacity: 0.75;">
+				<span style="font-size: 1.35rem; font-weight: 800; color: #475569;">☀️ SUNSYNK</span>
+				<span style="font-size: 1.35rem; font-weight: 800; color: #475569;">🔌 VICTRON ENERGY</span>
+				<span style="font-size: 1.35rem; font-weight: 800; color: #475569;">🔋 FREEDOM WON</span>
+				<span style="font-size: 1.35rem; font-weight: 800; color: #475569;">⚡ DEYE HYBRID</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonials Section with Avatars -->
+	<section class="solar-testimonials-section" style="padding: 5rem 1rem; background: #f8fafc;">
+		<div class="solar-section-container" style="max-width: 1100px; margin: 0 auto;">
+			<div class="solar-section-header text-center" style="text-align: center; margin-bottom: 3.5rem;">
+				<h2 style="font-size: 2.25rem; font-weight: 800; color: #0f172a; margin-bottom: 1rem;">What Our Clients Say</h2>
+				<p style="color: #64748b; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">See how we helped families and local businesses secure independent power.</p>
 			</div>
 
-			<div class="solar-future-grid">
-				<div class="solar-future-item">
-					<span class="future-icon">💨</span>
-					<h4>Wind Micro-Turbines</h4>
-					<p>Modular wind generation pairing seamlessly with existing solar inverter setups.</p>
+			<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+				<!-- Testimonial 1 -->
+				<div style="background: #ffffff; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+					<p style="color: #475569; font-style: italic; line-height: 1.6; margin-bottom: 1.5rem;">"We used to dread Stage 6 loadshedding. Antigravity installed a 5kW Sunsynk hybrid inverter with 10kWh Freedom Won batteries. Now our TVs, WiFi, fridge, and lights never skip a beat. Excellent job!"</p>
+					<div style="display: flex; align-items: center; gap: 1rem;">
+						<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80" alt="Johan Vorster" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+						<div>
+							<strong style="color: #0f172a; display: block; font-size: 0.95rem;">Johan Vorster</strong>
+							<span style="color: #94a3b8; font-size: 0.8rem;">Pretoria East</span>
+						</div>
+					</div>
 				</div>
-				<div class="solar-future-item">
-					<span class="future-icon">🌱</span>
-					<h4>Biogas Systems</h4>
-					<p>Agricultural & commercial waste-to-energy conversion modules.</p>
-				</div>
-				<div class="solar-future-item">
-					<span class="future-icon">⚡</span>
-					<h4>Smart EV Chargers</h4>
-					<p>High-speed Level 2 & DC Fast Charging stations powered directly by rooftop solar.</p>
+
+				<!-- Testimonial 2 -->
+				<div style="background: #ffffff; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);">
+					<p style="color: #475569; font-style: italic; line-height: 1.6; margin-bottom: 1.5rem;">"The solar configurator was incredibly accurate! It estimated my residential system at 6.4kW, which is exactly what our engineering site auditor recommended. Highly professional team."</p>
+					<div style="display: flex; align-items: center; gap: 1rem;">
+						<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Lerato Nkosi" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+						<div>
+							<strong style="color: #0f172a; display: block; font-size: 0.95rem;">Lerato Nkosi</strong>
+							<span style="color: #94a3b8; font-size: 0.8rem;">Bryanston, Sandton</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
