@@ -1,6 +1,6 @@
 <?php
 /**
- * Programmatic Demo Content & Default Page Setup.
+ * Programmatic Demo Content, Page Seeding, and WooCommerce Products Setup.
  *
  * @package Solar_Energy_Core
  */
@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Automatically Create Default Site Pages & Assign Custom Templates on Plugin Activation.
+ * Automatically Create Default Site Pages & Assign Custom Templates.
  */
 function solar_energy_setup_default_pages() {
 	$pages = array(
@@ -68,3 +68,83 @@ function solar_energy_setup_default_pages() {
 	}
 }
 register_activation_hook( SOLAR_CORE_FILE, 'solar_energy_setup_default_pages' );
+
+/**
+ * Seed Sample WooCommerce Products into WordPress Database.
+ */
+function solar_energy_create_sample_products() {
+	if ( ! class_exists( 'WooCommerce' ) ) {
+		return;
+	}
+
+	$sample_products = array(
+		'ja-solar-550w' => array(
+			'title'       => 'JA Solar 550W DeepBlue 3.0 Monocrystalline Panel',
+			'price'       => '3299',
+			'sku'         => 'SOL-PAN-JA550',
+			'description' => 'High-efficiency monocrystalline solar panel engineered for maximum daily yield and long-term durability.',
+		),
+		'sunsynk-8kw' => array(
+			'title'       => 'Sunsynk 8kW Hybrid Inverter (Single Phase)',
+			'price'       => '28499',
+			'sku'         => 'SOL-INV-SS8',
+			'description' => 'Smart hybrid inverter with advanced touch screen, dual MPPT inputs, and certified loadshedding protection.',
+		),
+		'freedom-won-10kwh' => array(
+			'title'       => 'Freedom Won Lite Home 10/8 LiFePO4 Battery',
+			'price'       => '58999',
+			'sku'         => 'SOL-BAT-FW10',
+			'description' => 'Modular lithium iron phosphate storage battery pack featuring a 10-year warranty and high-cycle longevity.',
+		),
+		'starter-kit-5kw' => array(
+			'title'       => 'Sunsynk 5kW Hybrid Inverter + 5kWh Battery Starter Kit',
+			'price'       => '74999',
+			'sku'         => 'SOL-KIT-START5',
+			'description' => 'A complete starter combo kit designed to keep your essential household loads online during Stage 6 loadshedding.',
+		),
+	);
+
+	foreach ( $sample_products as $slug => $data ) {
+		$product_id = wc_get_product_id_by_sku( $data['sku'] );
+		if ( ! $product_id ) {
+			$post_id = wp_insert_post( array(
+				'post_title'   => $data['title'],
+				'post_content' => $data['description'],
+				'post_status'  => 'publish',
+				'post_type'    => 'product',
+			) );
+
+			if ( $post_id && ! is_wp_error( $post_id ) ) {
+				$product = wc_get_product( $post_id );
+				if ( $product ) {
+					$product->set_sku( $data['sku'] );
+					$product->set_regular_price( $data['price'] );
+					$product->set_price( $data['price'] );
+					$product->set_manage_stock( true );
+					$product->set_stock_quantity( 15 );
+					$product->set_stock_status( 'instock' );
+					$product->save();
+				}
+			}
+		}
+	}
+}
+
+/**
+ * Master Setup Engine - Runs on admin initialization to seed database.
+ */
+function solar_energy_run_demo_setup() {
+	if ( 'yes' === get_option( 'solar_demo_setup_completed' ) ) {
+		return;
+	}
+
+	// Setup pages
+	solar_energy_setup_default_pages();
+
+	// Setup WooCommerce Products
+	if ( class_exists( 'WooCommerce' ) ) {
+		solar_energy_create_sample_products();
+		update_option( 'solar_demo_setup_completed', 'yes' );
+	}
+}
+add_action( 'admin_init', 'solar_energy_run_demo_setup' );

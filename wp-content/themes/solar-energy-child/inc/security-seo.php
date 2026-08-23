@@ -35,7 +35,7 @@ function solar_energy_output_json_ld_schema() {
 			'@type'       => 'SolarEnergyCompany',
 			'name'        => get_bloginfo( 'name' ),
 			'url'         => home_url(),
-			'logo'        => get_stylesheet_directory_uri() . '/assets/images/logo.png',
+			'logo'        => get_stylesheet_directory_uri() . '/assets/images/logo.jpg',
 			'description' => get_bloginfo( 'description' ),
 			'telephone'   => '+1-800-555-SOLAR',
 			'address'     => array(

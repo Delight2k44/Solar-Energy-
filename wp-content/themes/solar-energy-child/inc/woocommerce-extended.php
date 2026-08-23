@@ -64,9 +64,9 @@ function solar_energy_display_atum_stock_badge() {
 	}
 
 	if ( $product->is_in_stock() ) {
-		echo '<span class="solar-status-pill green">✔️ In Stock — Ready for Technician Dispatch</span>';
+		echo '<span class="solar-status-pill green"><span class="solar-status-dot"></span>In Stock — Ready for Technician Dispatch</span>';
 	} else {
-		echo '<span class="solar-status-pill amber">⏳ Backorder — Dispatched in 3-5 Days</span>';
+		echo '<span class="solar-status-pill amber"><span class="solar-status-dot"></span>Backorder — Dispatched in 3-5 Days</span>';
 	}
 }
 add_action( 'woocommerce_single_product_summary', 'solar_energy_display_atum_stock_badge', 12 );

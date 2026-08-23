@@ -25,7 +25,7 @@ get_header();
 		<?php if ( is_user_logged_in() ) : ?>
 			<div class="solar-portal-dashboard">
 				<div class="solar-calc-card">
-					<h3>Welcome back, <?php echo esc_html( wp_get_current_user()->display_name ); ?> 👋</h3>
+					<h3>Welcome back, <?php echo esc_html( wp_get_current_user()->display_name ); ?></h3>
 					<div class="solar-portal-quick-stats">
 						<div class="solar-result-item">
 							<span class="solar-result-label">Active System</span>
@@ -43,10 +43,10 @@ get_header();
 
 					<div class="margin-top-2rem">
 						<h4>My Documents & Service History</h4>
-						<ul class="solar-doc-list">
-							<li>📄 <a href="#">25-Year Inverter Warranty Certificate.pdf</a></li>
-							<li>📄 <a href="#">Annual System Inspection Log (June 2026).pdf</a></li>
-							<li>📄 <a href="#">Net Metering Utility Approval.pdf</a></li>
+						<ul class="solar-doc-list" style="list-style:none;padding:0;">
+							<li style="margin-bottom:0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:16px;height:16px;display:inline-block;vertical-align:middle;margin-right:6px;color:var(--solar-primary);"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg> <a href="#" style="text-decoration:none;color:var(--solar-blue);">25-Year Inverter Warranty Certificate.pdf</a></li>
+							<li style="margin-bottom:0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:16px;height:16px;display:inline-block;vertical-align:middle;margin-right:6px;color:var(--solar-primary);"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg> <a href="#" style="text-decoration:none;color:var(--solar-blue);">Annual System Inspection Log (June 2026).pdf</a></li>
+							<li style="margin-bottom:0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:16px;height:16px;display:inline-block;vertical-align:middle;margin-right:6px;color:var(--solar-primary);"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg> <a href="#" style="text-decoration:none;color:var(--solar-blue);">Net Metering Utility Approval.pdf</a></li>
 						</ul>
 					</div>
 				</div>
