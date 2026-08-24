@@ -1,14 +1,573 @@
 /*
-Theme Name: Solar Energy Child
-Theme URI: https://github.com/Delight2k44/Solar-Energy-
-Description: Modern, responsive Child Theme for Solar Energy Solutions & WooCommerce Store (Compatible with Kadence and Astra).
-Author: Delight2k44
-Author URI: https://github.com/Delight2k44
-Template: astra
+Theme Name: Kinetix Solar
+Template: kadence
+Author: Kinetix Engineering Solutions
 Version: 1.0.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: solar-energy-child
+License: GPL v2
+Text Domain: kinetix-solar
+Description: Premium solar e-commerce child theme. Glassmorphism design, modular architecture for future energy sectors (wind, biogas, batteries). Built on Kadence.
 */
 
-/* Custom CSS declarations will be loaded via assets/css/solar-calculators.css */
+/* ============================================
+   IMPORTS
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ============================================
+   CSS CUSTOM PROPERTIES (Design Tokens)
+   ============================================ */
+:root {
+  /* Core Palette */
+  --knx-navy-950: #020617;
+  --knx-navy-900: #0f172a;
+  --knx-navy-800: #1e293b;
+  --knx-navy-700: #334155;
+  
+  --knx-amber-500: #f59e0b;
+  --knx-amber-400: #fbbf24;
+  --knx-amber-600: #d97706;
+  
+  --knx-cyan-400: #38bdf8;
+  --knx-emerald-400: #34d399;
+  
+  --knx-white: #ffffff;
+  --knx-slate-200: #e2e8f0;
+  --knx-slate-400: #94a3b8;
+  
+  /* Glass System */
+  --knx-glass-bg: rgba(255, 255, 255, 0.03);
+  --knx-glass-bg-hover: rgba(255, 255, 255, 0.06);
+  --knx-glass-border: rgba(255, 255, 255, 0.12);
+  --knx-glass-border-hover: rgba(255, 255, 255, 0.2);
+  --knx-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --knx-glass-blur: blur(24px) saturate(140%);
+  --knx-glass-radius: 28px;
+  --knx-glass-radius-sm: 20px;
+  
+  /* Typography */
+  --knx-font: 'Inter', system-ui, sans-serif;
+  --knx-h1: clamp(2rem, 5vw, 3.5rem);
+  --knx-h2: clamp(1.75rem, 4vw, 2.75rem);
+  --knx-h3: clamp(1.25rem, 3vw, 1.5rem);
+  --knx-body: clamp(0.95rem, 1.5vw, 1.05rem);
+  
+  /* Spacing */
+  --knx-section-pad: clamp(4rem, 8vw, 8rem);
+  --knx-container: 1280px;
+  --knx-gap: 1.5rem;
+  
+  /* Animation */
+  --knx-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --knx-duration: 0.4s;
+}
+
+/* ============================================
+   BASE RESET
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--knx-font);
+  background: var(--knx-navy-950);
+  color: var(--knx-slate-200);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   GLASSMORPHISM SYSTEM
+   ============================================ */
+.knx-glass {
+  position: relative;
+  background: var(--knx-glass-bg);
+  backdrop-filter: var(--knx-glass-blur);
+  -webkit-backdrop-filter: var(--knx-glass-blur);
+  border: 1px solid var(--knx-glass-border);
+  border-radius: var(--knx-glass-radius);
+  box-shadow: var(--knx-glass-shadow);
+  transition: all var(--knx-duration) var(--knx-ease);
+}
+
+.knx-glass::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  pointer-events: none;
+}
+
+.knx-glass::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: calc(var(--knx-glass-radius) - 1px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.knx-glass:hover {
+  background: var(--knx-glass-bg-hover);
+  border-color: var(--knx-glass-border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+.knx-h1 {
+  font-size: var(--knx-h1);
+  font-weight: 900;
+  color: var(--knx-white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.knx-h2 {
+  font-size: var(--knx-h2);
+  font-weight: 800;
+  color: var(--knx-white);
+  line-height: 1.15;
+}
+
+.knx-h3 {
+  font-size: var(--knx-h3);
+  font-weight: 700;
+  color: var(--knx-white);
+  line-height: 1.2;
+}
+
+.knx-gradient-text {
+  background: linear-gradient(135deg, var(--knx-amber-400), var(--knx-amber-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.knx-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s var(--knx-ease);
+  cursor: pointer;
+  border: none;
+  font-family: var(--knx-font);
+}
+
+.knx-btn--primary {
+  background: linear-gradient(135deg, var(--knx-amber-500), var(--knx-amber-600));
+  color: var(--knx-navy-900);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.35);
+}
+
+.knx-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.5);
+}
+
+.knx-btn--ghost {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.knx-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   BADGES & TRUST
+   ============================================ */
+.knx-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.knx-badge--amber {
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  color: var(--knx-amber-400);
+}
+
+.knx-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: rgba(226, 232, 240, 0.7);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.knx-trust-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-20px, 30px) scale(1.1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+.knx-animate {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.knx-animate.is-visible {
+  animation: fadeUp 0.8s var(--knx-ease) forwards;
+}
+
+.knx-animate--delay-1 { animation-delay: 0.15s; }
+.knx-animate--delay-2 { animation-delay: 0.3s; }
+.knx-animate--delay-3 { animation-delay: 0.45s; }
+
+/* ============================================
+   ORBS & EFFECTS
+   ============================================ */
+.knx-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.knx-orb--amber {
+  width: 400px; height: 400px;
+  background: rgba(251, 191, 36, 0.12);
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+.knx-orb--cyan {
+  width: 300px; height: 300px;
+  background: rgba(56, 189, 248, 0.1);
+  animation: floatOrb 10s ease-in-out infinite reverse;
+}
+
+/* ============================================
+   SECTION UTILITIES
+   ============================================ */
+.knx-section {
+  position: relative;
+  padding: var(--knx-section-pad) 1.5rem;
+  overflow: hidden;
+}
+
+.knx-container {
+  max-width: var(--knx-container);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.knx-section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.knx-section-title .knx-h2 {
+  margin-bottom: 0.75rem;
+}
+
+/* ============================================
+   GRID
+   ============================================ */
+.knx-grid {
+  display: grid;
+  gap: var(--knx-gap);
+}
+
+.knx-grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.knx-grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* ============================================
+   PRODUCT CARD
+   ============================================ */
+.knx-product-card {
+  overflow: hidden;
+  padding: 0;
+  text-align: left;
+}
+
+.knx-product-card__image {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.knx-product-card__image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--knx-ease);
+}
+
+.knx-product-card:hover .knx-product-card__image img {
+  transform: scale(1.05);
+}
+
+.knx-product-card__content {
+  padding: 1.5rem;
+}
+
+.knx-product-card__name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--knx-white);
+  margin-bottom: 0.5rem;
+}
+
+.knx-product-card__price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--knx-amber-400), var(--knx-amber-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   STAT COUNTER
+   ============================================ */
+.knx-stat {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.knx-stat__number {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--knx-white);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.knx-stat__label {
+  font-size: 0.8rem;
+  color: var(--knx-slate-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   TESTIMONIAL
+   ============================================ */
+.knx-testimonial {
+  padding: 2rem;
+  text-align: left;
+}
+
+.knx-testimonial__stars {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  color: var(--knx-amber-400);
+}
+
+.knx-testimonial__quote {
+  font-style: italic;
+  color: rgba(226, 232, 240, 0.85);
+  margin-bottom: 1.5rem;
+}
+
+.knx-testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.knx-testimonial__name {
+  font-weight: 700;
+  color: var(--knx-white);
+  font-size: 0.95rem;
+}
+
+.knx-testimonial__location {
+  font-size: 0.8rem;
+  color: var(--knx-slate-400);
+}
+
+.knx-testimonial__avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--knx-glass-border);
+}
+
+/* ============================================
+   FAQ ACCORDION
+   ============================================ */
+.knx-faq-item {
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.knx-faq-item__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  color: var(--knx-white);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--knx-font);
+  cursor: pointer;
+  text-align: left;
+}
+
+.knx-faq-item__question svg {
+  width: 20px; height: 20px;
+  transition: transform 0.3s var(--knx-ease);
+  flex-shrink: 0;
+}
+
+.knx-faq-item.is-open .knx-faq-item__question {
+  color: var(--knx-amber-400);
+}
+
+.knx-faq-item.is-open .knx-faq-item__question svg {
+  transform: rotate(180deg);
+}
+
+.knx-faq-item__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--knx-ease), padding 0.4s var(--knx-ease);
+  padding: 0 1.5rem;
+  color: var(--knx-slate-300);
+}
+
+.knx-faq-item.is-open .knx-faq-item__answer {
+  max-height: 500px;
+  padding: 0 1.5rem 1.5rem;
+}
+
+/* ============================================
+   TIMELINE
+   ============================================ */
+.knx-timeline {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+}
+
+.knx-timeline::before {
+  content: '';
+  position: absolute;
+  top: 24px; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--knx-amber-500), var(--knx-cyan-400));
+  z-index: 0;
+}
+
+.knx-timeline__step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.knx-timeline__title {
+  font-weight: 700;
+  color: var(--knx-white);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.knx-timeline__desc {
+  font-size: 0.9rem;
+  color: var(--knx-slate-400);
+  line-height: 1.5;
+}
+
+.knx-timeline__number {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--knx-amber-500), var(--knx-amber-600));
+  color: var(--knx-navy-900);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  :root { --knx-glass-radius: 20px; }
+  
+  .knx-grid--3, .knx-grid--4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .knx-timeline {
+    flex-direction: column;
+  }
+  
+  .knx-timeline::before {
+    display: none;
+  }
+  
+  .knx-btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .knx-orb { display: none; }
+}
