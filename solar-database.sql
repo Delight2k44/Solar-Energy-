@@ -1,5 +1,5 @@
 -- ==========================================================================
--- Solar Harvest E-Commerce Database Seeding Script (WordPress Schema)
+-- Kinetix Engineering Solutions E-Commerce Database Seeding Script (WordPress Schema)
 -- Targets: wp_posts and wp_postmeta tables (Default WordPress Prefix: wp_)
 -- ==========================================================================
 

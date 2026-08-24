@@ -20,25 +20,24 @@ get_header();
 		<span style="background: var(--solar-secondary); color: var(--solar-slate-900); padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 800; margin-right: 0.5rem; text-transform: uppercase;">Stage 6 Loadshedding Protection</span> Save up to R5,000 on turn-key installation bookings this month!
 	</div>
 
-	<!-- Split Hero Section -->
+	<!-- Centered Glassy Hero Section -->
 	<section class="solar-hero-section">
 		<div class="solar-hero-container">
-			<div class="solar-hero-content">
-				<span class="solar-calc-badge amber">Loadshedding Protection Systems</span>
-				<h1 class="solar-hero-title">Beat Loadshedding with Premium Hybrid Solar & Battery Systems</h1>
-				<p class="solar-hero-subtitle">Get seamless Stage 6 backup protection. Custom residential solar panel installation, certified Freedom Won battery packs, and smart inverter setups. 25-Year Performance Warranty.</p>
-				<div class="solar-hero-cta-group">
-					<a href="#configurator-section" class="solar-btn solar-btn-primary">Size Your Solar System ZAR →</a>
-					<a href="#shop-section" class="solar-btn solar-btn-outline" style="color: #ffffff !important; border-color: rgba(255,255,255,0.2);">Explore Solar Shop</a>
+			<div class="solar-glass-card">
+				<div class="solar-hero-content">
+					<span class="solar-calc-badge amber">Premium Solar E-Commerce Store</span>
+					<h1 class="solar-hero-title">Power Your Life with Smart Solar Energy</h1>
+					<p class="solar-hero-subtitle">Welcome to Kinetix Engineering Solutions. We provide certified high-yield monocrystalline solar panels, smart hybrid inverters, and modular lithium battery storage kits. Order online with nationwide shipping and optional professional installation.</p>
+					<div class="solar-hero-cta-group">
+						<a href="#configurator-section" class="solar-btn solar-btn-primary">Size Your Solar System ZAR →</a>
+						<a href="#shop-section" class="solar-btn solar-btn-outline" style="color: #ffffff !important; border-color: rgba(255,255,255,0.4);">Shop Solar Hardware</a>
+					</div>
+					<div class="solar-hero-trust-bar">
+						<span>✓ 25-Year Panel Warranty</span>
+						<span>✓ Sunsynk & Victron Partners</span>
+						<span>✓ Certified Local SA Installers</span>
+					</div>
 				</div>
-				<div class="solar-hero-trust-bar">
-					<span>✓ 25-Year Panel Warranty</span>
-					<span>✓ Sunsynk & Victron Partners</span>
-					<span>✓ Certified Local SA Installers</span>
-				</div>
-			</div>
-			<div class="solar-hero-image-wrapper">
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/images/solar_panel.jpg' ); ?>" alt="Modern Solar Array Mockup">
 			</div>
 		</div>
 	</section>
