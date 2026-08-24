@@ -22,6 +22,8 @@ get_header();
 
 	<!-- Centered Glassy Hero Section -->
 	<section class="solar-hero-section">
+		<div class="orb orb-1"></div>
+		<div class="orb orb-2"></div>
 		<div class="solar-hero-container">
 			<div class="solar-glass-card">
 				<div class="solar-hero-content">
